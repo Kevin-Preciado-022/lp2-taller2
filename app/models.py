@@ -20,7 +20,7 @@ class Categoria(db.Model):
     #         - Tipo db.String(80)
     #         - No puede ser nula (nullable=False)
     #         - Debe ser única (unique=True), no queremos categorías repetidas
-    # nombre = db.Column(...)
+    nombre = db.Column(db.String(80), nullable=False, unique=True)
 
     # Relación uno-a-muchos: una categoría tiene muchos productos.
     # 'backref' crea automáticamente el atributo producto.categoria
@@ -30,7 +30,7 @@ class Categoria(db.Model):
     def __repr__(self):
         """Representación legible del objeto (útil al depurar)."""
         # TODO 2: Retorna algo como f"<Categoria {self.nombre}>"
-        pass
+        return f"<Categoria {self.nombre}>"
 
 
 class Producto(db.Model):
@@ -51,17 +51,22 @@ class Producto(db.Model):
     #   stock    -> db.Integer,     nullable=False, default=0
     #   activo   -> db.Boolean,     nullable=False, default=True
     #
-    # sku = db.Column(...)
-    # marca = db.Column(...)
-    # ...
+    sku = db.Column(db.String(20), unique=True, nullable=False)
+    marca = db.Column(db.String(80), nullable=False)
+    nombre = db.Column(db.String(160), nullable=False)
+    precio = db.Column(db.Float, nullable=False)
+    foto = db.Column(db.String(200), nullable=True)
+    stock = db.Column(db.Integer, nullable=False, default=0)
+    activo = db.Column(db.Boolean, nullable=False, default=True)
 
     # TODO 4: Define la llave foránea hacia la tabla 'categorias'.
     #         Pista: db.Column(db.Integer, db.ForeignKey("categorias.id"),
     #                          nullable=False)
-    # categoria_id = db.Column(...)
+    categoria_id = db.Column(db.Integer, db.ForeignKey("categorias.id"), nullable=False)
 
     def __repr__(self):
         # TODO 5: Retorna algo como f"<Producto {self.sku} - {self.nombre}>"
+        return f"<Producto {self.sku} - {self.nombre}>"
         pass
 
     @property
@@ -71,4 +76,5 @@ class Producto(db.Model):
         TODO 6: Retorna True solamente si self.activo es verdadero
                 Y self.stock es mayor que 0.
         """
-        pass
+        return self.activo and self.stock > 0
+    pass
