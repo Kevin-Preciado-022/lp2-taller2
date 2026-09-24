@@ -19,6 +19,7 @@
     "activo": true,
     "categoria": "Almacenamiento"
   },
+  
   {
     "sku": "AUD-001",
     "marca": "Sony",
@@ -28,5 +29,17 @@
     "stock": 0,
     "activo": true,
     "categoria": "Audio"
+  },
+  {
+    "sku": "AUD-002",
+    "marca": "Sony",
+    "nombre": "Audífonos WH-1000XM5",
+    "precio": 2249896 ,
+    "foto": "images/audifonos-sony.jpg",
+    "stock": 0,
+    "activo": true,
+    "categoria": "Audio"
   }
+
+
 ]

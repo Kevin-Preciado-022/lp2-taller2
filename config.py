@@ -19,7 +19,7 @@ class Config:
     # TODO 1: Cambia este valor por una cadena secreta propia.
     #         En un proyecto real se lee de una variable de entorno:
     #         os.environ.get("SECRET_KEY", "valor-por-defecto")
-    SECRET_KEY =  os.environ.get("SECRET_KEY", "Mi_clave_secreta_segura")
+    SECRET_KEY =  os.environ.get("SECRET_KEY", "Cielo_Rojo_22046")
 
     # URI de conexión a la base de datos.
     # Para SQLite el formato es: sqlite:///<ruta-absoluta-al-archivo>
