@@ -84,28 +84,10 @@ def registrar_comandos(app):
             )
             db.session.add(producto)
             cargados += 1
-        # Por cada producto del JSON debes:
-        #
-        # TODO 6: Buscar si su categoría ya existe en la base de datos:
-        #         categoria = Categoria.query.filter_by(
-        #             nombre=item["categoria"]).first()
-        #
-        # TODO 7: Si no existe, crearla y agregarla a la sesión:
-        #         categoria = Categoria(nombre=item["categoria"])
-        #         db.session.add(categoria)
-        #         db.session.flush()   # asigna el id sin confirmar aún
-        #
-        # TODO 8: Evitar duplicados: si ya existe un Producto con ese sku
-        #         (Producto.query.filter_by(sku=item["sku"]).first()),
-        #         saltarlo con 'continue'.
-        #
-        # TODO 9: Crear el objeto Producto con los datos del JSON y
-        #         asignarle categoria_id=categoria.id, luego
-        #         db.session.add(producto)
-
-        # --- Confirmar la transacción ---------------------------------
+        ---------------------------------
         # TODO 10: Llama a db.session.commit() para guardar TODO de una
         #          vez. Hasta este momento nada se ha escrito en disco.
+        db.session.commit()
 
         # TODO 11: Muestra cuántos productos se cargaron con click.echo(...)
-        pass
+        click.echo(f"✅ {cargados} productos cargados.")
