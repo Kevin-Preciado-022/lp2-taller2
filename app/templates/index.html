@@ -12,6 +12,13 @@
     {# TODO 1: Recorre 'categorias' y genera un enlace por cada una hacia
        url_for('main.index', categoria=categoria.id). Marca con la clase
        'chip-activo' la que coincida con categoria_id. #}
+       categorias = categorias|sort(attribute='nombre')
+       {% for categoria in categorias %}
+           <a href="{{ url_for('main.index', categoria=categoria.id) }}"
+              class="chip {% if categoria.id == categoria_id %}chip-activo{% endif %}">
+              {{ categoria.nombre }}
+           </a>
+       {% endfor %}
 </div>
 
 <div class="catalogo">
