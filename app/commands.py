@@ -37,7 +37,10 @@ def registrar_comandos(app):
     def reset_db():
         """Borra y vuelve a crear todas las tablas (¡pierde los datos!)."""
         # TODO 3: Llama a db.drop_all() y luego a db.create_all()
+        db.drop_all()
+        db.create_all()
         # TODO 4: Muestra un mensaje de confirmación
+        click.echo ("Base de datos reiniciada: tablas borradas y recreadas.")
         pass
 
     @app.cli.command("seed-db")
@@ -48,8 +51,39 @@ def registrar_comandos(app):
         # TODO 5: Abre RUTA_PRODUCTOS con encoding="utf-8" y usa
         #         json.load() para obtener la lista de productos.
         # datos = ...
+        with open(RUTA_PRODUCTOS, "r", encoding="utf-8") as f:
+            datos = json.load(f)
+        cargados = 0
 
-        # --- Insertar categorías y productos --------------------------
+        # --- Insertar categorías y productos 
+        # --------------------------
+        for item in datos:
+            # TODO 6: Buscar si su categoría ya existe en la base de datos:
+            categoria = Categoria.query.filter_by(nombre=item["categoria"]).first()
+
+            # TODO 7: Si no existe, crearla y agregarla a la sesión:
+            if not categoria:
+                categoria = Categoria(nombre=item["categoria"])
+                db.session.add(categoria)
+                db.session.flush()  # asigna el id sin confirmar aún
+
+            # TODO 8: Evitar duplicados: si ya existe un Producto con ese sku
+            if Producto.query.filter_by(sku=item["sku"]).first():
+                continue
+
+            # TODO 9: Crear el objeto Producto con los datos del JSON y
+            producto = Producto(
+                sku=item["sku"],
+                marca=item["marca"],
+                nombre=item["nombre"],
+                precio=item["precio"],
+                foto=item.get("foto"),
+                stock=item.get("stock", 0),
+                activo=item.get("activo", True),
+                categoria_id=categoria.id,
+            )
+            db.session.add(producto)
+            cargados += 1
         # Por cada producto del JSON debes:
         #
         # TODO 6: Buscar si su categoría ya existe en la base de datos:
