@@ -8,6 +8,13 @@
 
     <ul>
     {# TODO 1: Recorre 'categorias' con un ciclo for. #}
+    {% for categoria in categorias %}
+        <li>
+            <a href="{{ url_for('main.index', categoria=categoria.id) }}">
+                {{ categoria.nombre }} ({{ categoria.productos|length }})
+            </a>
+        </li>
+    {% endfor %}
 
     {# TODO 2: Por cada una muestra su nombre y, entre paréntesis, cuántos
        productos tiene. Gracias al backref puedes contar así:
@@ -16,8 +23,11 @@
        Y enlázala al catálogo filtrado:
            <a href="{{ url_for('main.index', categoria=categoria.id) }}">...</a>
     #}
+    {{ categoria.nombre }} ({{ categoria.productos|length }})
+    <a href="{{ url_for('main.index', categoria=categoria.id) }}">...</a>
 
     {# TODO 3: Cierra el ciclo con {% endfor %} #}
+    {{% endfor %}}
     </ul>
 </div>
 {% endblock %}
