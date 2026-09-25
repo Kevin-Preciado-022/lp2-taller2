@@ -59,8 +59,16 @@
     "stock": 0,
     "activo": true,
     "categoria": "Portatiles"
+  },
+  {
+    "sku": "PORT-002",
+    "marca": "HUAWEI",
+    "nombre": "HUAWEI MatePad SE 10.4",
+    "precio": 6500000 ,
+    "foto": "images/huawei-matepad-se-10.4.jpg",
+    "stock": 0,
+    "activo": true,
+    "categoria": "Telefonos inteligentes "
   }
-  
-
 
 ]
