@@ -39,7 +39,28 @@
     "stock": 0,
     "activo": true,
     "categoria": "Audio"
+  },
+  {
+    "sku": "CEL-001",
+    "marca": "Samsung",
+    "nombre": "Samsung Galaxy S23",
+    "precio": 1699900 ,
+    "foto": "images/samsung-galaxy-s23.jpg",
+    "stock": 0,
+    "activo": true,
+    "categoria": "Telefonos inteligentes "
+  },
+  {
+    "sku": "PORT-001",
+    "marca": "ASUS",
+    "nombre": "ROG Zephyrus G15",
+    "precio": 6500000 ,
+    "foto": "images/rog-zephyrus-g15.jpg",
+    "stock": 0,
+    "activo": true,
+    "categoria": "Portatiles"
   }
+  
 
 
 ]
