@@ -25,11 +25,11 @@ def make_shell_context():
     """
     from app.models import Producto, Categoria
 
-    # TODO 1: Retorna un diccionario con db, Producto y Categoria, por ej:
-    #         return {"db": db, "Producto": Producto, "Categoria": Categoria}
+    
+    return {"db": db, "Producto": Producto, "Categoria": Categoria} 
     pass
 
 
 if __name__ == "__main__":
-    # TODO 2: Ejecuta la aplicación en modo debug (app.run(debug=True))
+    app.run(debug=True)
     pass
