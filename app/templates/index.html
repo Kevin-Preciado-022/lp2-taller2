@@ -69,11 +69,7 @@
             {% else %}
                 <p>Agotado</p>
             {% endif %}
-            {% if producto.disponible %}
-                <p>Disponible</p>
-            {% else %}
-                <p>Agotado</p>
-            {% endif %}
+            
 
             <a href="{{ url_for('main.detalle', sku=producto.sku) }}">Ver detalle</a>
         </div>

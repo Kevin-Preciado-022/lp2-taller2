@@ -78,4 +78,4 @@ def registrar_comandos(app):
         db.session.commit()
 
        
-        click.echo(f"✅ {cargados} productos cargados.")
+        click.echo(f" {cargados} productos cargados.")

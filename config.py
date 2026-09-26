@@ -8,7 +8,7 @@ tocar la lógica del programa.
 
 import os
 
-# Ruta absoluta a la carpeta raíz del proyecto (donde está run.py).
+
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -25,4 +25,5 @@ class Config:
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+  
     SQLALCHEMY_ECHO = False
