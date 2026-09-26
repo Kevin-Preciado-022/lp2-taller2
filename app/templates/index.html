@@ -24,11 +24,7 @@
 <div class="catalogo">
 
     {# TODO 2: Recorre la lista 'productos' con {% for producto in productos %} #}
-
-    {# TODO 3: Dentro del ciclo, muestra cada producto. Ahora 'producto' es
-       un OBJETO del modelo, no un diccionario, así que accedes a sus
-       atributos con punto: producto.nombre, producto.precio, etc.
-
+    for producto in productos:
         <div class="tarjeta-producto">
             <img src="{{ url_for('static', filename=producto.foto) }}" alt="{{ producto.nombre }}">
             <h3>{{ producto.nombre }}</h3>
@@ -36,17 +32,60 @@
             <p>{{ producto.categoria.nombre }}</p>   {# viene del backref #}
             <p>${{ "{:,.0f}".format(producto.precio) }}</p>
 
-            TODO 4: usa la propiedad producto.disponible para mostrar
-            "Disponible" o "Agotado" con un {% if %} ... {% else %} ... {% endif %}
+            {# TODO 4: usa la propiedad producto.disponible para mostrar
+               "Disponible" o "Agotado" con un {% if %} ... {% else %} ... {% endif %} #}
+            {% if producto.disponible %}
+                <p>Disponible</p>
+            {% else %}
+                <p>Agotado</p>
+            {% endif %}
 
             <a href="{{ url_for('main.detalle', sku=producto.sku) }}">Ver detalle</a>
         </div>
-    #}
+    {% endfor %}
 
     {# TODO 5: Cierra el ciclo con {% endfor %} #}
 
     {# TODO 6 (opcional): usa {% else %} dentro del for para mostrar
        "No hay productos en esta categoría" cuando la lista venga vacía. #}
+    {% else %}
+        <p>No hay productos en esta categoría.</p>
+    {% endfor %}
+
+    
+        <div class="catalogo">
+            {% for producto in productos %}
+            <div class="tarjeta-producto">
+            <img src="{{ url_for('static', filename=producto.foto) }}" alt="{{ producto.nombre }}">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.marca }}</p>
+            <p>{{ producto.categoria.nombre }}</p>   {# viene del backref #}
+            <p>${{ "{:,.0f}".format(producto.precio) }}</p>
+
+            {# TODO 4: usa la propiedad producto.disponible para mostrar
+               "Disponible" o "Agotado" con un {% if %} ... {% else %} ... {% endif %} #}
+            {% if producto.disponible %}
+                <p>Disponible</p>
+            {% else %}
+                <p>Agotado</p>
+            {% endif %}
+            {% if producto.disponible %}
+                <p>Disponible</p>
+            {% else %}
+                <p>Agotado</p>
+            {% endif %}
+
+            <a href="{{ url_for('main.detalle', sku=producto.sku) }}">Ver detalle</a>
+        </div>
+    {% endfor %}
+
+    {# TODO 5: Cierra el ciclo con {% endfor %} #}
+
+    {# TODO 6 (opcional): usa {% else %} dentro del for para mostrar
+       "No hay productos en esta categoría" cuando la lista venga vacía. #}
+    {% else %}
+        <p>No hay productos en esta categoría.</p>
+    {% endfor %}
 
 </div>
 {% endblock %}
