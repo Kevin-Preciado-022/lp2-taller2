@@ -51,7 +51,7 @@
     "categoria": "Telefonos inteligentes "
   },
   {
-    "sku": "CEL-004",
+    "sku": "CEL-002",
     "marca": "Apple",
     "nombre": "Apple iPad",
     "precio": 1840000,
@@ -90,5 +90,4 @@
     "activo": true,
     "categoria": "Telefonos inteligentes "
   }
-
 ]
