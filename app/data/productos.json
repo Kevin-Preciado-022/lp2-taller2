@@ -51,10 +51,20 @@
     "categoria": "Telefonos inteligentes "
   },
   {
+    "sku": "CEL-004",
+    "marca": "Apple",
+    "nombre": "Apple iPad",
+    "precio": 1840000,
+    "foto": "images/iPad.jpg",
+    "stock": 26,
+    "activo": true,
+    "categoria": "Telefonos inteligentes "
+  },
+  {
     "sku": "CEL-003",
     "marca": "Amazon",
     "nombre": "Kindle Oasis",
-    "precio": 1699900 ,
+    "precio": 1100000 ,
     "foto": "images/Kindle Oasis.jpg",
     "stock": 26,
     "activo": true,
@@ -74,7 +84,7 @@
     "sku": "PORT-002",
     "marca": "HUAWEI",
     "nombre": "HUAWEI MatePad SE 10.4",
-    "precio": 6500000 ,
+    "precio": 928.000,
     "foto": "images/huawei-matepad-se-10.4.jpg",
     "stock": 45,
     "activo": true,
