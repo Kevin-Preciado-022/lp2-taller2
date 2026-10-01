@@ -10,7 +10,7 @@
 - [Kevin Dario Preciado Vallecilla](https://github.com/Kevin-Preciado-022/lp2-taller2.git)
 
 ## Descripción del Proyecto
-En el siguiente proyecto tenemos en cuenta nuestro taller anterior en el que creamos la estrutura de una tienda virtual, pero  teniendo en cuenta los temas de ORM,el flask utilizado anteriormente, junto con el SQLite y SQLAlchemy,
+En el siguiente proyecto tenemos en cuenta nuestro taller anterior en el que creamos la estrutura de una tienda virtual, pero  teniendo en cuenta los temas de ORM,el flask utilizado anteriormente, junto con el SQLite y SQLAlchemy, para realizar procesos automaticos y que la creacion de un poco mas optima, agilizando asi procesos evitando que estos sean manuales y mejorando optimizacion, siguiendo una secuencia de pasos ordenados y siguiendo intrucciones precisas entendiendo paso a paso cada uno de los metods mencionados anteriormente
 ## Proceso
 
 Morbi quam lectus, tempus sit amet mi non, facilisis dignissim erat. Aenean tortor libero, rhoncus eu eleifend ut, volutpat id nisi. Ut porta eros at ante rutrum pharetra. Integer nec nulla dictum, vestibulum ligula id, hendrerit ex. Morbi eget tortor metus.
