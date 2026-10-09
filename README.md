@@ -26,35 +26,20 @@ Comandos CLI → inicialización y carga de datos (init-db, reset-db, seed-db).
 Rutas y vistas → consultas ORM para mostrar productos y categorías.
 ## Proceso
 Proceso de uso
-Instalar dependencias:
+Se realizo cada uno de las configuraciones soliciitadas en los TODO 
+siguiendo los pasos de la guia adjuntada en el repositorio 
 
-pip install -r requirements.txt
+para realizar iniciar la tienda se tiene que ingresar a la carpeta del proyecto 
 
-Configurar la aplicación con config.py.
+cd lp2-taller2
 
-Inicializar la base de datos:
+source venv/bin/activate 
 
-flask init-db
+y luego 
 
-Cargar datos iniciales:
+python3 run.py
 
-flask seed-db
-
-Ejecutar la aplicación:
-
-flask run
-
-Abrir en el navegador:
-
-http://localhost:5000
-
-Explorar rutas principales:
-
-/ → catálogo de productos
-
-/producto/<sku> → detalle de producto
-
-/categorias → lista de categorías
+ip de la tienda virtual http://127.0.0.1:5000/
 
 [GUIA.md](docs/GUIA.md)
 
