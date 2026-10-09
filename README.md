@@ -10,10 +10,51 @@
 - [Kevin Dario Preciado Vallecilla](https://github.com/Kevin-Preciado-022/lp2-taller2.git)
 
 ## Descripción del Proyecto
-En el siguiente proyecto tenemos en cuenta nuestro taller anterior en el que creamos la estrutura de una tienda virtual, pero  teniendo en cuenta los temas de ORM,el flask utilizado anteriormente, junto con el SQLite y SQLAlchemy, para realizar procesos automaticos y que la creacion de un poco mas optima, agilizando asi procesos evitando que estos sean manuales y mejorando optimizacion, siguiendo una secuencia de pasos ordenados y siguiendo intrucciones precisas entendiendo paso a paso cada uno de los metods mencionados anteriormente
-## Proceso
+Este proyecto es parte del curso de Lenguajes de Programación II.
+Se desarrolla una Tienda Virtual usando Python y Flask, aplicando conceptos de:
 
-Morbi quam lectus, tempus sit amet mi non, facilisis dignissim erat. Aenean tortor libero, rhoncus eu eleifend ut, volutpat id nisi. Ut porta eros at ante rutrum pharetra. Integer nec nulla dictum, vestibulum ligula id, hendrerit ex. Morbi eget tortor metus.
+Application Factory → creación y configuración de la aplicación.
+
+Configuración modular → separación de parámetros en config.py.
+
+Extensiones → uso de SQLAlchemy para manejar la base de datos.
+
+Modelos ORM → definición de tablas (Categoria, Producto).
+
+Comandos CLI → inicialización y carga de datos (init-db, reset-db, seed-db).
+
+Rutas y vistas → consultas ORM para mostrar productos y categorías.
+## Proceso
+Proceso de uso
+Instalar dependencias:
+
+pip install -r requirements.txt
+
+Configurar la aplicación con config.py.
+
+Inicializar la base de datos:
+
+flask init-db
+
+Cargar datos iniciales:
+
+flask seed-db
+
+Ejecutar la aplicación:
+
+flask run
+
+Abrir en el navegador:
+
+http://localhost:5000
+
+Explorar rutas principales:
+
+/ → catálogo de productos
+
+/producto/<sku> → detalle de producto
+
+/categorias → lista de categorías
 
 [GUIA.md](docs/GUIA.md)
 
